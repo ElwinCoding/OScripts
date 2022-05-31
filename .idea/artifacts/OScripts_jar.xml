@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="OScripts:jar">
+    <output-path>$USER_HOME$/DreamBot/Scripts</output-path>
+    <root id="archive" name="OScripts.jar">
+      <element id="module-output" name="OScripts" />
+    </root>
+  </artifact>
+</component>
