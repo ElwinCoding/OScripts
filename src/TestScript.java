@@ -9,7 +9,7 @@ public class TestScript extends AbstractScript {
     @Override
     public int onLoop() {
         log("My first script!");
-
+        log("hello world");
         return 5000;
     }
 }
