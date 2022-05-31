@@ -10,6 +10,7 @@ public class TestScript extends AbstractScript {
     public int onLoop() {
         log("My first script!");
         log("hello world");
+        log("how ar eoyu");
         return 5000;
     }
 }
