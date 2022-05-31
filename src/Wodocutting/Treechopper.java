@@ -20,13 +20,13 @@ public class Treechopper extends AbstractScript {
 
     @Override
     public int onLoop() {
-        GameObject tree = GameObjects.closest("Wodocutting");
+        GameObject tree = GameObjects.closest("Tree");
         if (tree != null) {
             tree.interact("Chop Down");
-            sleep(2000);
+            sleep(3000);
         }
         while (getLocalPlayer().isAnimating()) {
-            sleep(1000);
+            sleep(2000);
         }
         log("bitch");
         Inventory.drop("Logs");
