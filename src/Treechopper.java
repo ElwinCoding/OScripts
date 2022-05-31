@@ -25,7 +25,6 @@ public class Treechopper extends AbstractScript {
         }
         while (getLocalPlayer().isAnimating()) {
             sleep(1000);
-            log("waiting until tree is chopped");
         }
         log("fuck");
         Inventory.drop("Logs");
