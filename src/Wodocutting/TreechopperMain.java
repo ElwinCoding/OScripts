@@ -6,6 +6,7 @@ import org.dreambot.api.script.impl.TaskScript;
 import org.dreambot.api.script.ScriptManifest;
 import org.dreambot.api.script.Category;
 
+import javax.swing.*;
 import java.awt.*;
 
 @ScriptManifest(author = "You", name = "TreeChopper", version = 1.0, description = "chop trees", category = Category.WOODCUTTING)
@@ -13,10 +14,16 @@ import java.awt.*;
 
 public class TreechopperMain extends TaskScript {
 
+    private boolean bank;
+    private String tree_type;
+
 
     public void onStart() {
+        SwingUtilities.invokeLater(() -> {
+            createGUI();
+        });
         log("tree chopper is now starting.");
-        SkillTracker.start(Skill.WOODCUTTING);
+        SkillTracker.start(Skill.WOODCUTTING); // set to start on login
     }
 
     @Override
@@ -30,5 +37,14 @@ public class TreechopperMain extends TaskScript {
 
     public void onExit() {
         log("Tree chopper has finished chopping");
+    }
+
+    private void createGUI() {
+
+        JFrame frame = new JFrame();
+        frame.setTitle("Wood Chopper");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setVisible(true);
+
     }
 }
