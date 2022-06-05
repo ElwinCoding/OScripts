@@ -1,25 +1,30 @@
-/*
 package Wodocutting;
 
 import org.dreambot.api.methods.interactive.GameObjects;
 import org.dreambot.api.wrappers.interactive.GameObject;
 import org.dreambot.api.methods.container.impl.Inventory;
+import org.dreambot.api.script.TaskNode;
 
-@Override
-public int onLoop() {
-        GameObject tree = GameObjects.closest("Tree");
+public class ChopTask extends TaskNode {
+
+    @Override
+    // check if inventory
+    public boolean accept() {
+        return !Inventory.isFull() && !isChopping();
+    }
+
+    @Override
+    // perform task
+    public int execute() {
+        GameObject tree = GameObjects.closest(TreechopperMain.tree);
         if (tree != null) {
-        tree.interact("Chop Down");
-        sleep(3000);
+            tree.interact("Chop Down");
         }
-        while (getLocalPlayer().isAnimating()) {
-        sleep(2000);
-        }
-        log("bitch");
-        Inventory.drop("Logs");
-        return -1;
-        }
+        return 5000;
+    }
 
-public class ChopTask {
+    // return if character is performing action
+    private boolean isChopping() {
+        return getLocalPlayer().isAnimating();
+    }
 }
-*/
