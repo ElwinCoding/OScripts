@@ -92,6 +92,9 @@ public class TreechopperMain extends TaskScript {
         });
         setting_panel.add(bank_check);
 
+        JButton button = new JButton();
+        button.setText("Start Script");
+
         frame.getContentPane().add(setting_panel, BorderLayout.CENTER);
     }
 
