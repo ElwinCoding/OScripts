@@ -12,13 +12,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 @ScriptManifest(author = "You", name = "TreeChopper", version = 1.0, description = "chop trees", category = Category.WOODCUTTING)
 
 
 public class TreechopperMain extends TaskScript {
 
     private boolean bank = false;
-    private String tree_type;
+    public static String tree = "Tree";
 
 
     public void onStart() {
@@ -27,6 +28,8 @@ public class TreechopperMain extends TaskScript {
         });
         log("tree chopper is now starting.");
         SkillTracker.start(Skill.WOODCUTTING); // set to start on login
+
+        addNodes(new ChopTask(), new DropTask());
     }
 
     @Override
@@ -58,9 +61,18 @@ public class TreechopperMain extends TaskScript {
         JPanel setting_panel = new JPanel();
         setting_panel.setLayout(new GridLayout(0, 2));
 
-        JLabel tree_label = new JLabel();
-        tree_label.setText("Tree Type:");
-        setting_panel.add(tree_label);
+        JLabel label = new JLabel();
+        label.setText("Tree Type:");
+        setting_panel.add(label);
+
+        JComboBox<String> tree_type = new JComboBox<>(new String[] {"Tree", "Oak", "Willow" });
+        tree_type.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tree = (String) tree_type.getSelectedItem();
+            }
+        });
+        setting_panel.add(tree_type);
 
         // this adds tick boxes
         JCheckBox bank_check = new JCheckBox();
