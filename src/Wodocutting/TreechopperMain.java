@@ -25,6 +25,7 @@ public class TreechopperMain extends TaskScript {
 
     private boolean bank = false;
     public static String tree = "Tree";
+    private boolean running = false;
 
 
     public void onStart() {
@@ -32,7 +33,7 @@ public class TreechopperMain extends TaskScript {
             createGUI();
         });
         log("tree chopper is now starting.");
-        ChopTreeTest.dreamBotStartupLogger();
+        // ChopTreeTest.dreamBotStartupLogger();
         SkillTracker.start(Skill.WOODCUTTING); // set to start on login
 
         addNodes(new ChopTask(), new DropTask());
@@ -71,29 +72,30 @@ public class TreechopperMain extends TaskScript {
         label.setText("Tree Type:");
         setting_panel.add(label);
 
+        // adds a dropdown box
         JComboBox<String> tree_type = new JComboBox<>(new String[] {"Tree", "Oak", "Willow" });
-        tree_type.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tree = (String) tree_type.getSelectedItem();
-            }
-        });
         setting_panel.add(tree_type);
 
         // this adds tick boxes
         JCheckBox bank_check = new JCheckBox();
         bank_check.setText("Bank Logs");
-
-        bank_check.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                bank = true;
-            }
-        });
         setting_panel.add(bank_check);
 
         JButton button = new JButton();
         button.setText("Start Script");
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                bank = bank_check.isSelected();
+                tree = tree_type.getSelectedItem().toString();
+                if (tree == null) {
+                    tree = "Tree";
+                }
+                running = true;
+                frame.dispose();
+            }
+        });
+        setting_panel.add(button);
 
         frame.getContentPane().add(setting_panel, BorderLayout.CENTER);
     }
