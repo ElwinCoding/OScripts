@@ -23,7 +23,9 @@ public class CowKiller extends TaskScript{
                 new AttackCow(sm),
                 new GoToBank(sm),
                 new PickUpItem(sm),
-                new Eat(sm)
+                new Eat(sm),
+                new Decision(sm),
+                new DoneFighting(sm)
         );
         log("Cow Killer is now running.");
     }

@@ -18,16 +18,19 @@ public class PickUpItem extends TaskNode {
     
     @Override
     public boolean accept() {
-        log(!Inventory.isFull() && !isPlayerInCombat());
-        return !Inventory.isFull() && !isPlayerInCombat() && isItemNear();
+        return sm.getState() == StateMachine.State.COLLECTING;
     }
 
     @Override
     public int execute() {
+        sleep(3000);
+        log("picking up");
         GroundItem item = GroundItems.closest("Cowhide");
         if (item != null){
             item.interact("Take");
         }
+        sleep(5000);
+        sm.setState(StateMachine.State.IDLE);
         return 1000;
     }
 

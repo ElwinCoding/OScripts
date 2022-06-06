@@ -1,6 +1,5 @@
 package CowKiller;
 
-import javafx.concurrent.Task;
 import org.dreambot.api.methods.container.impl.Inventory;
 import org.dreambot.api.methods.container.impl.bank.Bank;
 import org.dreambot.api.methods.container.impl.bank.BankLocation;

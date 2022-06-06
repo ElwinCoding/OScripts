@@ -5,6 +5,7 @@ public class StateMachine {
         ATTACKING,
         COLLECTING,
         IDLE,
+        START_ATTACKING,
         BANKING
     }
 

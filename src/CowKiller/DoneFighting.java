@@ -12,13 +12,19 @@ public class DoneFighting extends TaskNode {
     }
 
     @Override
+    public int priority() {
+        return 2;
+    }
+
+    @Override
     public boolean accept() {
-        return Players.localPlayer().isInCombat() && state.getState() == StateMachine.State.ATTACKING;
+        return (!Players.localPlayer().isInCombat()) && (sm.getState() == StateMachine.State.ATTACKING);
     }
 
     @Override
     public int execute() {
-        state.setState(StateMachine.State.COLLECTING);
+        log("done fighting");
+        sm.setState(StateMachine.State.COLLECTING);
         return 0;
     }
 

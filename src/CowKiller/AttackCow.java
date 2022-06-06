@@ -18,7 +18,7 @@ public class AttackCow extends TaskNode {
 
     @Override
     public boolean accept() {
-        return !Inventory.isFull() && !Players.localPlayer().isInCombat();
+        return sm.getState() == StateMachine.State.START_ATTACKING;
     }
 
     @Override
@@ -30,6 +30,7 @@ public class AttackCow extends TaskNode {
             log("Attacking Cow.");
         }
 
+        sm.setState(StateMachine.State.ATTACKING);
         return 1000;
     }
 }
