@@ -9,7 +9,13 @@ import org.dreambot.api.methods.skills.Skill;
 import org.dreambot.api.wrappers.items.Item;
 
 public class Eat extends TaskNode {
-    public int HEALTH_THRESHOLD = 5;
+    private int HEALTH_THRESHOLD = 5;
+    
+    private StateMachine sm;
+
+    public Eat(StateMachine sm){
+        this.sm = sm;
+    }
 
     @Override
     public boolean accept() {
