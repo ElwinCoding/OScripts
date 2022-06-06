@@ -32,13 +32,35 @@ public class TreechopperMain extends TaskScript {
         SwingUtilities.invokeLater(() -> {
             createGUI();
         });
-        log("tree chopper is now starting.");
-        // ChopTreeTest.dreamBotStartupLogger();
+        while (!running) {
+            sleep(5000);
+        }
         SkillTracker.start(Skill.WOODCUTTING); // set to start on login
+        log("tree chopper is now starting.");
 
-        addNodes(new ChopTask(), new DropTask());
+        AxeCheck check = new AxeCheck();
+        if (!check.Axe()) {
+            log("axe not found, checking bank for axe");
+            if (!check.getAxe()) {
+                log("unable to locate axe, please restart script once axe is acquired");
+                stop();
+            }
+        }
+        else {
+            log("axe is found");
+        }
+
+        log("Tree Chopper now starting");
+        addNodes(new ChopTask());
+        if (bank) {
+            addNodes(new BankTask());
+        }
+        else {
+            addNodes(new DropTask());
+        }
     }
 
+    // overlay for xp gained
     @Override
     public void onPaint(Graphics g) {
         g.setColor(Color.CYAN);
@@ -49,7 +71,6 @@ public class TreechopperMain extends TaskScript {
 
 
     public void onExit() {
-        log(bank);
         log("Tree chopper has finished chopping");
     }
 

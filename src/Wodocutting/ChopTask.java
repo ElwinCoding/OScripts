@@ -20,7 +20,7 @@ public class ChopTask extends TaskNode {
         if (tree != null) {
             tree.interact("Chop Down");
         }
-        return 5000;
+        return 3000;
     }
 
     // return if character is performing action
