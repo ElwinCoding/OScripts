@@ -1,3 +1,5 @@
+package Misc;
+
 import org.dreambot.api.script.AbstractScript;
 import org.dreambot.api.script.ScriptManifest;
 import org.dreambot.api.script.Category;

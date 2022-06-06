@@ -1,4 +1,4 @@
-package Wodocutting;
+package Woodcutting;
 
 import org.dreambot.api.methods.skills.Skill;
 import org.dreambot.api.methods.skills.SkillTracker;
@@ -13,7 +13,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.FileWriter;
 
 @ScriptManifest(

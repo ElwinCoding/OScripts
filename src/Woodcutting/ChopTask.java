@@ -1,4 +1,4 @@
-package Wodocutting;
+package Woodcutting;
 
 import org.dreambot.api.methods.interactive.GameObjects;
 import org.dreambot.api.wrappers.interactive.GameObject;
