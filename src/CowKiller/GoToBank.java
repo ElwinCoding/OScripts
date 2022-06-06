@@ -9,6 +9,13 @@ import org.dreambot.api.script.TaskNode;
 import org.dreambot.api.methods.depositbox.DepositBox;
 
 public class GoToBank extends TaskNode {
+    
+    private StateMachine sm;
+
+    public GoToBank(StateMachine sm){
+        this.sm = sm;
+    }
+      
     @Override
     public boolean accept() {
         return Inventory.isFull();
