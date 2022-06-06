@@ -9,6 +9,12 @@ import org.dreambot.api.methods.interactive.Players;
 
 
 public class AttackCow extends TaskNode {
+    
+    private StateMachine sm;
+
+    public AttackCow(StateMachine sm){
+        this.sm = sm;
+    }
 
     @Override
     public boolean accept() {
