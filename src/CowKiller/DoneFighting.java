@@ -5,10 +5,10 @@ import org.dreambot.api.script.TaskNode;
 
 public class DoneFighting extends TaskNode {
 
-    static StateMachine state;
+    private StateMachine sm;
 
-    public DoneFighting(StateMachine state){
-        state = state;
+    public DoneFighting(StateMachine sm){
+        this.sm = sm;
     }
 
     @Override
