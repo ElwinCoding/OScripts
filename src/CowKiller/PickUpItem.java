@@ -9,6 +9,13 @@ import org.dreambot.api.wrappers.interactive.NPC;
 import org.dreambot.api.wrappers.items.GroundItem;
 
 public class PickUpItem extends TaskNode {
+    
+    private StateMachine sm;
+
+    public PickUpItem(StateMachine sm){
+        this.sm = sm;
+    }
+    
     @Override
     public boolean accept() {
         log(!Inventory.isFull() && !isPlayerInCombat());
