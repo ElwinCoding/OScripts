@@ -17,9 +17,8 @@ import org.dreambot.api.Client;
 
 public class CowKiller extends TaskScript{
 
-    StateMachine sm = new StateMachine();
-
     public void onStart(){
+        StateMachine sm = new StateMachine();
         addNodes(
                 new AttackCow(sm),
                 new GoToBank(sm),
