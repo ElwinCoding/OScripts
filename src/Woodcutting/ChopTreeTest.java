@@ -32,7 +32,7 @@ public class ChopTreeTest extends TaskScript{
             createGUI();
         });
         log("tree chopper is now starting.");
-        dreamBotStartupLogger();
+        //dreamBotStartupLogger();
         SkillTracker.start(Skill.WOODCUTTING); // set to start on login
     }
 

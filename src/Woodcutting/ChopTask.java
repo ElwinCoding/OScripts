@@ -7,6 +7,8 @@ import org.dreambot.api.script.TaskNode;
 
 public class ChopTask extends TaskNode {
 
+    String name = TreechopperMain.tree;
+
     @Override
     // check if inventory
     public boolean accept() {
@@ -16,15 +18,21 @@ public class ChopTask extends TaskNode {
     @Override
     // perform task
     public int execute() {
-        GameObject tree = GameObjects.closest(TreechopperMain.tree);
-        if (tree != null) {
-            tree.interact("Chop Down");
+        GameObject tree = GameObjects.closest(name);
+        if (tree == null) {
+            travel(name);
+            tree = GameObjects.closest(name);
         }
+        tree.interact("Chop Down");
         return 3000;
     }
 
     // return if character is performing action
     private boolean isChopping() {
         return getLocalPlayer().isAnimating();
+    }
+
+    private void travel(String name) {
+
     }
 }

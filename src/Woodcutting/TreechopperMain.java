@@ -1,4 +1,4 @@
-package Wodocutting;
+package Woodcutting;
 
 import org.dreambot.api.methods.skills.Skill;
 import org.dreambot.api.methods.skills.SkillTracker;
@@ -23,7 +23,7 @@ import java.awt.event.ActionListener;
 
 public class TreechopperMain extends TaskScript {
 
-    private boolean bank = false;
+    private boolean drop = false;
     public static String tree = "Tree";
     private boolean running = false;
 
@@ -52,11 +52,11 @@ public class TreechopperMain extends TaskScript {
 
         log("Tree Chopper now starting");
         addNodes(new ChopTask());
-        if (bank) {
-            addNodes(new BankTask());
+        if (drop) {
+            addNodes(new DropTask());
         }
         else {
-            addNodes(new DropTask());
+            addNodes(new BankTask());
         }
     }
 
@@ -98,16 +98,16 @@ public class TreechopperMain extends TaskScript {
         setting_panel.add(tree_type);
 
         // this adds tick boxes
-        JCheckBox bank_check = new JCheckBox();
-        bank_check.setText("Bank Logs");
-        setting_panel.add(bank_check);
+        JCheckBox drop_check = new JCheckBox();
+        drop_check.setText("Drop Logs");
+        setting_panel.add(drop_check);
 
         JButton button = new JButton();
         button.setText("Start Script");
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                bank = bank_check.isSelected();
+                drop = drop_check.isSelected();
                 tree = tree_type.getSelectedItem().toString();
                 if (tree == null) {
                     tree = "Tree";
