@@ -1,9 +1,13 @@
 package Woodcutting;
 
 import org.dreambot.api.methods.interactive.GameObjects;
+import org.dreambot.api.methods.map.Tile;
 import org.dreambot.api.wrappers.interactive.GameObject;
 import org.dreambot.api.methods.container.impl.Inventory;
 import org.dreambot.api.script.TaskNode;
+import org.dreambot.api.methods.walking.impl.Walking;
+import org.dreambot.api.methods.map.Area;
+import static org.dreambot.api.methods.walking.web.node.impl.bank.WebBankArea.DRAYNOR_MARKET;
 
 public class ChopTask extends TaskNode {
 
@@ -33,6 +37,7 @@ public class ChopTask extends TaskNode {
     }
 
     private void travel(String name) {
-
+        Tile destination = DRAYNOR_MARKET.getArea().getRandomTile();
+        Walking.walk(destination);
     }
 }
