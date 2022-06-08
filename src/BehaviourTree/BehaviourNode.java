@@ -2,5 +2,5 @@ package BehaviourTree;
 
 public interface BehaviourNode {
 
-    public boolean evaluate();
+    public boolean execute();
 }
