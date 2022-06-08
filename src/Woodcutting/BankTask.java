@@ -1,6 +1,7 @@
-package Wodocutting;
+package Woodcutting;
 
 import org.dreambot.api.methods.container.impl.Inventory;
+import org.dreambot.api.methods.container.impl.bank.Bank;
 import org.dreambot.api.script.TaskNode;
 
 
@@ -8,12 +9,16 @@ public class BankTask extends TaskNode{
 
     @Override
     public boolean accept() {
-        return !Inventory.isFull();
+        return Inventory.isFull();
     }
 
     @Override
     public int execute() {
-
-        return 5000;
+        log("walking to bank");
+        while (!Bank.openClosest()) {
+            sleepUntil(() -> getLocalPlayer().isMoving(),20000);
+        }
+        Bank.depositAll("Logs");
+        return 20000;
     }
 }
