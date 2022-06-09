@@ -1,13 +1,10 @@
 package Functions.Conditions;
-import Functions.ConditionFunction;
+import Functions.Condition;
 import org.dreambot.api.methods.skills.Skill;
 import org.dreambot.api.methods.skills.Skills;
 
-import java.util.function.Supplier;
 
-
-
-public class isHealthLow implements ConditionFunction {
+public class isHealthLow implements Condition {
     public int HEALTH_THRESHOLD = 7;
 
     @Override

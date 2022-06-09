@@ -1,16 +1,16 @@
-package BehaviourTree;
+package BehaviourTreeNodes;
 import lombok.Builder;
 
 import java.util.List;
 
 @Builder
-public class SelectorNode implements BehaviourNode{
+public class Selector implements Behaviour {
 
-    private List<BehaviourNode> children;
+    private List<Behaviour> children;
 
     @Override
     public boolean execute() {
-        for(BehaviourNode bn: children) {
+        for(Behaviour bn: children) {
             if (bn.execute()) {
                 return true;
             }
