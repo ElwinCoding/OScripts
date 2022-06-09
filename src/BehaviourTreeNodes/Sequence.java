@@ -1,4 +1,4 @@
-package BehaviourTree;
+package BehaviourTreeNodes;
 
 import lombok.Builder;
 import lombok.Singular;
@@ -6,13 +6,13 @@ import lombok.Singular;
 import java.util.List;
 
 @Builder
-public class SequenceNode implements BehaviourNode {
+public class Sequence implements Behaviour {
     @Singular
-    private List<BehaviourNode> children;
+    private List<Behaviour> children;
 
     @Override
     public boolean execute() {
-        for(BehaviourNode bn: children) {
+        for(Behaviour bn: children) {
              if (!bn.execute()) {
                  return false;
              }

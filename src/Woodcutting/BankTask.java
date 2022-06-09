@@ -19,6 +19,6 @@ public class BankTask extends TaskNode{
             sleepUntil(() -> getLocalPlayer().isMoving(),20000);
         }
         Bank.depositAll("Logs");
-        return 20000;
+        return 5000;
     }
 }

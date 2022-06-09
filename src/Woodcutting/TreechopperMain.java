@@ -120,6 +120,4 @@ public class TreechopperMain extends TaskScript {
 
         frame.getContentPane().add(setting_panel, BorderLayout.CENTER);
     }
-
-
 }
