@@ -16,7 +16,7 @@ public class BankTask extends TaskNode{
     public int execute() {
         log("walking to bank");
         while (!Bank.openClosest()) {
-            sleepUntil(() -> getLocalPlayer().isMoving(),20000);
+            sleepUntil(() -> getLocalPlayer().isMoving(),5000);
         }
         Bank.depositAll("Logs");
         return 5000;
