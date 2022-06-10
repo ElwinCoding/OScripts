@@ -39,6 +39,7 @@ public class TreechopperMain extends TaskScript {
         log("tree chopper is now starting.");
 
         AxeCheck check = new AxeCheck();
+        log("checking axe");
         if (!check.Axe()) {
             log("axe not found, checking bank for axe");
             if (!check.getAxe()) {
