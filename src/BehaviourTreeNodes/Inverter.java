@@ -2,6 +2,8 @@ package BehaviourTreeNodes;
 
 import lombok.Builder;
 
+import static org.dreambot.api.methods.MethodProvider.log;
+
 @Builder
 public class Inverter implements Behaviour{
 
@@ -9,6 +11,7 @@ public class Inverter implements Behaviour{
 
     @Override
     public boolean execute() {
-        return !child.execute();
+        Boolean guh = child.execute();
+        return !guh;
     }
 }
