@@ -13,13 +13,14 @@ public class EatFood implements Action {
     @Override
     public Boolean get() {
         // check if inventory tab is open
+        log("Preparing to eat.");
         if (!Tabs.isOpen(Tab.INVENTORY)) {
             Tabs.openWithFKey(Tab.INVENTORY);
         }
         // eat the food if available
         Item food = Inventory.get(item -> item.hasAction("Eat"));
         if (food == null) {
-            log("found no food");
+            log("Found no food");
             return false;
         }
         else {
