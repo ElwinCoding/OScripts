@@ -2,12 +2,16 @@ package Functions.Conditions;
 
 import Functions.Condition;
 import static org.dreambot.api.methods.MethodProvider.log;
+import static org.dreambot.api.methods.MethodProvider.sleep;
+
 import org.dreambot.api.methods.interactive.Players;
 import org.dreambot.api.methods.item.GroundItems;
 import org.dreambot.api.methods.map.Area;
 import org.dreambot.api.methods.map.Tile;
 import org.dreambot.api.wrappers.items.GroundItem;
 import org.dreambot.api.wrappers.items.Item;
+
+import java.util.Random;
 
 
 public class isThereLootNear implements Condition {
@@ -28,6 +32,7 @@ public class isThereLootNear implements Condition {
         }
         if (surrounding_area.contains(item.getTile())){
             item.interact("Take");
+            sleep(500 + (int)(Math.random() * 400));
             return true;
         }
         return false;
