@@ -1,12 +1,7 @@
-package CowKiller;
-import Woodcutting.ChopTask;
-import Woodcutting.DropTask;
-import org.dreambot.api.methods.skills.Skill;
-import org.dreambot.api.methods.skills.SkillTracker;
+package Scripts.CowKiller;
 import org.dreambot.api.script.impl.TaskScript;
 import org.dreambot.api.script.ScriptManifest;
 import org.dreambot.api.script.Category;
-import org.dreambot.api.Client;
 
 @ScriptManifest(
         author = "You",

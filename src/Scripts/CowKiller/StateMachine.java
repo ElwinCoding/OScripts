@@ -1,4 +1,4 @@
-package CowKiller;
+package Scripts.CowKiller;
 
 public class StateMachine {
     enum State{

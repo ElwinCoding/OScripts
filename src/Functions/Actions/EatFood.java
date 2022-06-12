@@ -25,7 +25,6 @@ public class EatFood implements Action {
         }
         else {
             food.interact("Eat");
-            // sleep(2000);
             return true;
         }
     }

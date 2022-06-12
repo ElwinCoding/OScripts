@@ -1,4 +1,4 @@
-package Misc;
+package Scripts.Misc;
 
 import org.dreambot.api.script.AbstractScript;
 import org.dreambot.api.script.ScriptManifest;
@@ -6,9 +6,6 @@ import org.dreambot.api.script.Category;
 import org.dreambot.api.methods.interactive.NPCs;
 import org.dreambot.api.wrappers.interactive.NPC;
 import org.dreambot.api.methods.dialogues.Dialogues;
-import org.dreambot.api.methods.MethodProvider;
-
-import java.awt.*;
 
 @ScriptManifest(author = "You", name = "Tutorial Island", version = 1.0, description = "Getting off Tutorial Island", category = Category.MISC)
 

@@ -1,11 +1,8 @@
-package CowKiller;
+package Scripts.CowKiller;
 
-import org.dreambot.api.methods.container.impl.Inventory;
-import org.dreambot.api.methods.interactive.NPCs;
 import org.dreambot.api.methods.interactive.Players;
 import org.dreambot.api.methods.item.GroundItems;
 import org.dreambot.api.script.TaskNode;
-import org.dreambot.api.wrappers.interactive.NPC;
 import org.dreambot.api.wrappers.items.GroundItem;
 
 public class PickUpItem extends TaskNode {
