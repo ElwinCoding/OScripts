@@ -1,9 +1,7 @@
-package CowKiller;
+package Scripts.CowKiller;
 
-import org.dreambot.api.methods.MethodProvider;
 import org.dreambot.api.methods.container.impl.Inventory;
 import org.dreambot.api.methods.skills.Skills;
-import org.dreambot.api.methods.tabs.Tab;
 import org.dreambot.api.script.TaskNode;
 import org.dreambot.api.methods.skills.Skill;
 import org.dreambot.api.wrappers.items.Item;

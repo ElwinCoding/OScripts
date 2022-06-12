@@ -1,4 +1,4 @@
-package Misc;
+package Scripts.Misc;
 
 import org.dreambot.api.script.AbstractScript;
 import org.dreambot.api.script.ScriptManifest;

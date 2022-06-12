@@ -1,4 +1,4 @@
-package Woodcutting;
+package Scripts.Woodcutting;
 
 import org.dreambot.api.methods.Calculations;
 import org.dreambot.api.methods.container.impl.Inventory;

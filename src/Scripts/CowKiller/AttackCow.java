@@ -1,11 +1,8 @@
-package CowKiller;
+package Scripts.CowKiller;
 
-import org.dreambot.api.methods.container.impl.Inventory;
-import org.dreambot.api.methods.hotkeys.NPCAttackOption;
 import org.dreambot.api.methods.interactive.NPCs;
 import org.dreambot.api.script.TaskNode;
 import org.dreambot.api.wrappers.interactive.NPC;
-import org.dreambot.api.methods.interactive.Players;
 
 
 public class AttackCow extends TaskNode {

@@ -1,4 +1,4 @@
-package CowKiller;
+package Scripts.CowKiller;
 
 import org.dreambot.api.methods.interactive.Players;
 import org.dreambot.api.script.TaskNode;

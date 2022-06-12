@@ -1,4 +1,4 @@
-package Woodcutting;
+package Scripts.Woodcutting;
 
 import org.dreambot.api.methods.interactive.GameObjects;
 import org.dreambot.api.methods.map.Tile;

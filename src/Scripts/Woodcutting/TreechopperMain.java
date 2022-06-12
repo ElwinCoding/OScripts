@@ -1,4 +1,4 @@
-package Woodcutting;
+package Scripts.Woodcutting;
 
 import org.dreambot.api.methods.skills.Skill;
 import org.dreambot.api.methods.skills.SkillTracker;
@@ -66,7 +66,7 @@ public class TreechopperMain extends TaskScript {
     public void onPaint(Graphics g) {
         g.setColor(Color.CYAN);
         g.setFont(new Font("Arial", Font.BOLD, 16));
-        String experience = "Woodcutting Experience Gained: " + SkillTracker.getGainedExperience(Skill.WOODCUTTING);
+        String experience = "Scripts.Woodcutting Experience Gained: " + SkillTracker.getGainedExperience(Skill.WOODCUTTING);
         g.drawString(experience,20,30);
     }
 
