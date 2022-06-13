@@ -69,7 +69,7 @@ public class CowKillerRedux extends AbstractScript {
             .child(
                 Sequence.builder()
                     .child(Action.builder().func(new GoToBank()).build()) // open bank
-                    .child(Action.builder().func(new DepositAll()).build()) // dump inventory
+                    .child(Action.builder().func(new DepositAllExceptFood()).build()) // dump inventory
                     .build()
             )
             .build();
