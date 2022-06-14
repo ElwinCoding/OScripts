@@ -10,6 +10,10 @@ import org.dreambot.api.script.AbstractScript;
 import org.dreambot.api.script.Category;
 import org.dreambot.api.script.ScriptManifest;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 @ScriptManifest(
     author = "You",
     name = "Cowkiller Redux", version = 1.0,
@@ -46,19 +50,24 @@ public class CowKillerRedux extends AbstractScript {
         };
 
         Area AREA = new Area(TILES);
+        List<String> loot_names = new ArrayList<String>(){{
+            add("Cowhide");
+            add("Raw Beef");
+        }};
+        String monster_name = "Cow";
 
         Behaviour attack_loot = Selector.builder()
             .child(
                 Sequence.builder()
-                    .child(Condition.builder().func(new isThereLootNear("Cowhide")).build())
+                    .child(Condition.builder().func(new isThereLootNear(loot_names)).build())
                     .child(Inverter.builder()
                         .child(Condition.builder().func(new isInventoryFull()).build()).build()
                     )
-                    .child(Action.builder().func(new PickupLoot("Cowhide")).build())
+                    .child(Action.builder().func(new PickupLoot(loot_names)).build())
                     .build()
             )
             .child(Condition.builder().func(new CheckUnderAttack()).build())
-            .child(Action.builder().func(new AttackNearest("Cow")).build())
+            .child(Action.builder().func(new AttackNearest(monster_name)).build())
             .build();
 
 
