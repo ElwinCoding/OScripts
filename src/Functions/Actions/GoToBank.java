@@ -9,6 +9,7 @@ public class GoToBank implements Action {
     @Override
     public Boolean get() {
         MethodProvider.log("Going to bank");
+        MethodProvider.sleep(1000,3000);
         return Bank.openClosest();
     }
 }

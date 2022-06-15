@@ -23,7 +23,7 @@ public class AttackNearest implements Action {
         if (npc == null){
             return false;
         }
-        if(npc.canAttack() && !npc.isInCombat()){
+        if(npc.canAttack() && !npc.isInCombat() && npc.canReach()){
             npc.interact("Attack");
             log("Attacking.");
             log("Preparing to sleep.");
