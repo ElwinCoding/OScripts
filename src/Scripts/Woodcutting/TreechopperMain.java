@@ -92,10 +92,12 @@ public class TreechopperMain extends TaskScript {
 
         JLabel label = new JLabel();
         label.setText("Tree Type:");
+        label.setFont(new Font("Arial", Font.PLAIN, 20));
         setting_panel.add(label);
 
         // adds a dropdown box
         JComboBox<String> tree_type = new JComboBox<>(new String[] {"Tree", "Oak", "Willow" });
+        tree_type.setFont(new Font("Arial", Font.PLAIN, 20));
         setting_panel.add(tree_type);
 
         // this adds tick boxes
