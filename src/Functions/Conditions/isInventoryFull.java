@@ -9,12 +9,14 @@ public class isInventoryFull implements Condition {
     @Override
     public Boolean get() {
         Boolean check = Inventory.isFull();
+        /*
         if(check){
             log("Inventory Full.");
         }
         else{
             log("Inventory not full");
         }
+         */
         return check;
     }
 }

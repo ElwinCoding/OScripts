@@ -1,6 +1,8 @@
 package Functions.Actions;
 
 import Functions.Action;
+
+import static org.dreambot.api.Client.getLocalPlayer;
 import static org.dreambot.api.methods.MethodProvider.log;
 import static org.dreambot.api.methods.MethodProvider.sleepUntil;
 import org.dreambot.api.methods.interactive.NPCs;
@@ -24,19 +26,11 @@ public class AttackNearest implements Action {
         if(npc.canAttack() && !npc.isInCombat()){
             npc.interact("Attack");
             log("Attacking.");
-            CheckUnderAttack predicate = new CheckUnderAttack();
             log("Preparing to sleep.");
-            sleepUntil(predicate, 1200);
+            sleepUntil(() -> getLocalPlayer().isInCombat(), 1200);
             log("Woke up.");
             return true;
         }
         return false;
-    }
-}
-
-class CheckUnderAttack implements org.dreambot.api.utilities.impl.Condition{
-    @Override
-    public boolean verify() {
-        return Players.localPlayer().isInCombat();
     }
 }
