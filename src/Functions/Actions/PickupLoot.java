@@ -1,6 +1,7 @@
 package Functions.Actions;
 
 import Functions.Action;
+import org.dreambot.api.methods.MethodProvider;
 import org.dreambot.api.methods.item.GroundItems;
 import org.dreambot.api.wrappers.items.GroundItem;
 
@@ -21,6 +22,7 @@ public class PickupLoot implements Action {
             GroundItem item = GroundItems.closest(loot_name);
             if (item != null){
                 item.interact("Take");
+                MethodProvider.sleep(600, 1200);
                 status = true;
             }
         }

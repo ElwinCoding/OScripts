@@ -52,7 +52,6 @@ public class CowKillerRedux extends AbstractScript {
         Area AREA = new Area(TILES);
         List<String> loot_names = new ArrayList<String>(){{
             add("Cowhide");
-            add("Raw Beef");
         }};
         String monster_name = "Cow";
 
@@ -79,6 +78,10 @@ public class CowKillerRedux extends AbstractScript {
                 Sequence.builder()
                     .child(Action.builder().func(new GoToBank()).build()) // open bank
                     .child(Action.builder().func(new DepositAllExceptFood()).build()) // dump inventory
+                    .child(Selector.builder()
+                        .child(Condition.builder().func(new isFoodLow(6)).build())
+                        .child(Action.builder().func(new WithdrawlItemCap("Cooked meat", 6)).build())
+                        .build())
                     .build()
             )
             .build();

@@ -32,7 +32,7 @@ public class isThereLootNear implements Condition {
             GroundItem item = GroundItems.closest(loot_name);
             if (item != null && item.canReach() && surrounding_area.contains(item.getTile())) {
                 item.interact("Take");
-                sleep(500 + (int) (Math.random() * 400));
+                sleep(500 + (int) (Math.random() * 800));
                 loot_near = true;
             }
         }
