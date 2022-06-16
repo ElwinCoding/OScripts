@@ -1,4 +1,4 @@
-package CowKillerzReduxEdition;
+package Scripts.CowKillerzReduxEdition;
 
 
 import BehaviourTreeNodes.*;
@@ -11,7 +11,6 @@ import org.dreambot.api.script.Category;
 import org.dreambot.api.script.ScriptManifest;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 @ScriptManifest(
@@ -54,6 +53,8 @@ public class CowKillerRedux extends AbstractScript {
             add("Cowhide");
         }};
         String monster_name = "Cow";
+        int number_of_food_to_withdrawl = 8;
+        String food_to_withdrawl = "Cooked beef";
 
         Behaviour attack_loot = Selector.builder()
             .child(
@@ -79,8 +80,8 @@ public class CowKillerRedux extends AbstractScript {
                     .child(Action.builder().func(new GoToBank()).build()) // open bank
                     .child(Action.builder().func(new DepositAllExceptFood()).build()) // dump inventory
                     .child(Selector.builder()
-                        .child(Condition.builder().func(new isFoodLow(6)).build())
-                        .child(Action.builder().func(new WithdrawlItemCap("Cooked meat", 6)).build())
+                        .child(Condition.builder().func(new isFoodLow(number_of_food_to_withdrawl)).build())
+                        .child(Action.builder().func(new WithdrawlItemCap(food_to_withdrawl, number_of_food_to_withdrawl)).build())
                         .build())
                     .build()
             )
@@ -106,6 +107,5 @@ public class CowKillerRedux extends AbstractScript {
             .child(return_to_area)
             .child(attack_loot)
             .build();
-
     }
 }
