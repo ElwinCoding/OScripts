@@ -19,7 +19,7 @@ public class AttackNearest implements Action {
 
     @Override
     public Boolean get() {
-        NPC npc = NPCs.closest(npc_name);
+        NPC npc = NPCs.closest(f -> f != null && !f.isInCombat() && f.getName().equals(npc_name));
         if (npc == null){
             return false;
         }
