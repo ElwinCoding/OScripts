@@ -1,4 +1,4 @@
-package Functions.Fishing.Conditions;
+package Functions.Conditions;
 
 import Functions.Condition;
 import org.dreambot.api.methods.container.impl.Inventory;

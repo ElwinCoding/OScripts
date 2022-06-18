@@ -1,15 +1,13 @@
-package Fishing;
+package Scripts.Fishing;
 
 import BehaviourTreeNodes.Action;
 import Functions.Actions.DepositItem;
 import Functions.Actions.GoToBank;
 import Functions.Actions.WalkToDestination;
-import Functions.Fishing.Actions.CatchFish;
-import Functions.Fishing.Conditions.BaitCheck;
-import org.dreambot.api.Client;
+import Functions.Actions.CatchFish;
+import Functions.Conditions.BaitCheck;
 import Functions.Conditions.*;
 import BehaviourTreeNodes.*;
-import Functions.Conditions.*;
 import org.dreambot.api.script.AbstractScript;
 import org.dreambot.api.script.Category;
 import org.dreambot.api.script.ScriptManifest;

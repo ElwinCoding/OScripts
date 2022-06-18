@@ -52,15 +52,17 @@ public class CowKillerRedux extends AbstractScript {
         List<String> loot_names = new ArrayList<String>(){{
             add("Cowhide");
             add("Raw beef");
+            add("Bones");
         }};
         String monster_name = "Cow";
-        int number_of_food_to_withdrawal = 8;
-        String food_to_withdrawal = "Cooked beef";
+        int number_of_food_to_withdrawal = 6;
+        String food_to_withdrawal = "Cooked meat";
+        int loot_radius= 2;
 
         Behaviour attack_loot = Selector.builder()
             .child(
                 Sequence.builder()
-                    .child(Condition.builder().func(new isThereLootNear(loot_names)).build())
+                    .child(Condition.builder().func(new isThereLootNear(loot_names, loot_radius)).build())
                     .child(Inverter.builder()
                         .child(Condition.builder().func(new isInventoryFull()).build()).build()
                     )
@@ -102,11 +104,19 @@ public class CowKillerRedux extends AbstractScript {
             .child(Action.builder().func(new WalkToDestination(AREA)).build())
             .build();
 
+        Behaviour bury_bones = Selector.builder()
+            .child(Inverter.builder()
+                .child(Condition.builder().func(new IsBonesInInventory()).build())
+                .build())
+            .child(Action.builder().func(new BuryBones()).build())
+            .build();
+
         this.root = Sequence.builder()
             .child(health_check)
             .child(inv_full)
             .child(return_to_area)
             .child(attack_loot)
+            .child(bury_bones)
             .build();
     }
 }

@@ -1,4 +1,4 @@
-package Fishing;
+package Scripts.Fishing;
 
 import org.dreambot.api.Client;
 import org.dreambot.api.methods.map.Area;
@@ -7,7 +7,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -41,11 +40,11 @@ public class FishingGUI {
 
         fishing_equipment = new HashMap<String, String>();
         fishing_equipment.put("Shrimp/Anchovy", "Small fishing net");
-        fishing_equipment.put("Sardine/Herring", "Fishing Rod");
+        fishing_equipment.put("Sardine/Herring", "Scripts.Fishing Rod");
         fishing_equipment.put("Trout/Salmon", "Fly fishing rod");
 
         fishing_bait = new HashMap<String, String>();
-        fishing_bait.put("Sardine/Herring", "Fishing bait");
+        fishing_bait.put("Sardine/Herring", "Scripts.Fishing bait");
         fishing_bait.put("Trout/Salmon", "Feather");
 
         deposit_list = new ArrayList<String>() {{

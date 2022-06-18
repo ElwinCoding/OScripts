@@ -22,7 +22,7 @@ public class PickupLoot implements Action {
             GroundItem item = GroundItems.closest(loot_name);
             if (item != null){
                 item.interact("Take");
-                MethodProvider.sleep(600, 1200);
+                MethodProvider.sleep(1000, 2000);
                 status = true;
             }
         }

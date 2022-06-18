@@ -17,16 +17,18 @@ import java.util.Random;
 
 public class isThereLootNear implements Condition {
     final private List<String> loot_names;
+    final private int radius;
 
-    public isThereLootNear(List<String> loot_names){
+    public isThereLootNear(List<String> loot_names, int radius){
         this.loot_names = loot_names;
+        this.radius = radius;
     }
 
     @Override
     public Boolean get() {
         log("Checking if loot near.");
         Tile player_location = Players.localPlayer().getTile();
-        Area surrounding_area = Area.generateArea(3, player_location);
+        Area surrounding_area = Area.generateArea(radius, player_location);
         Boolean loot_near = false;
         for(String loot_name : this.loot_names) {
             GroundItem item = GroundItems.closest(loot_name);

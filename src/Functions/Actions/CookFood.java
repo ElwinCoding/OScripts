@@ -35,9 +35,7 @@ public class CookFood implements Action{
         log("woke");
         ItemProcessing.makeAll(food_to_cook);
 
-        log("guh");
-
-        MethodProvider.sleepUntil(() -> !Inventory.contains(food_to_cook),
+        MethodProvider.sleepUntil(() -> !Inventory.contains(food_to_cook) && getLocalPlayer().isAnimating(),
             Calculations.random(50000, 60000));
 
         return true;

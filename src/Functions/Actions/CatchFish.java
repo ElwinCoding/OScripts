@@ -1,4 +1,4 @@
-package Functions.Fishing.Actions;
+package Functions.Actions;
 
 import Functions.Action;
 import org.dreambot.api.methods.interactive.NPCs;
