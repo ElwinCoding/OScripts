@@ -58,6 +58,6 @@ public class Cooking extends AbstractScript {
     @Override
     public int onLoop() {
         this.root.execute();
-        return 100;
+        return 1000;
     }
 }
