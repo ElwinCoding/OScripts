@@ -1,3 +1,3 @@
 # OScripts
-Scripts for Dreambot
+Deprecated.Scripts for Dreambot
 
